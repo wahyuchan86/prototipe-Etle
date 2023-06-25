@@ -95,6 +95,30 @@ include 'koneksi.php';
                     </div>
             </form>
         </div>
+        <p id="countdown"></p>
+        <script>
+        // Mengatur waktu dalam detik
+        var countdownTime = 10;
+
+        // Mendapatkan elemen countdown
+        var countdownElement = document.getElementById("countdown");
+
+        // Mengupdate dan menampilkan timer
+        function updateCountdown() {
+            countdownElement.innerHTML = "Waktu tersisa: " + countdownTime + " detik";
+
+            if (countdownTime <= 0) {
+                // Mengarahkan pengguna ke halaman lain setelah waktu habis
+                window.location.href = "surattilang.php";
+            } else {
+                countdownTime--; // Mengurangi waktu
+                setTimeout(updateCountdown, 1000); // Memanggil fungsi ini setiap 1 detik
+            }
+        }
+
+        // Memulai timer
+        updateCountdown();
+    </script>
     <!-- =========== Scripts =========  -->
     <script src="assets/js/main.js"></script>
     <script srt="ässets/js/randomnumber.js"></script>

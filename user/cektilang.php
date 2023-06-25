@@ -114,7 +114,7 @@ $result = $conn->query($sql);
                                 <td>asaa</td>
                                 <td>dari database</td>
                                 <td><span class="status pending">Belum Dibayar</span></td>
-                                <td><a href=surattilang.php><span class="status">Detail</span></a></td>
+                                <td><a href=pembayaran.php><button>Detail</button></a></td>
                             </tr>
 
                             <tr>
