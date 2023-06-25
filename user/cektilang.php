@@ -104,7 +104,7 @@ $result = $conn->query($sql);
                         <thead>
                             <tr>
                                 <td>Nama</td>
-                                <td>No Polisi</td>
+                                <td>Denda</td>
                                 <td>Status</td>
                                 <td>Data Lengkap</td>
                             </tr>
