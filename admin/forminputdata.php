@@ -169,6 +169,10 @@ $kode = generateRandomString();
                           <input type="text" id="nohp" name="nohp" placeholder="Masukan No Handphone"/>
                         </div>
                         <div class="user-input-box">
+                          <label for="nohp">Denda</label>
+                          <input type="text" id="denda" name="denda" placeholder="Masukan Besaran Denda"/>
+                        </div>
+                        <div class="user-input-box">
                           <label for="bukti">Bukti Foto</label>
                           <input type="file" id="bukti" name="bukti">
                         </div>

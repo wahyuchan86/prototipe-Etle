@@ -4,6 +4,7 @@ include "koneksi.php";
 if($_SESSION['level'] !='admin'){
     header("location:../index.php");    
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -96,74 +97,39 @@ if($_SESSION['level'] !='admin'){
                         <a href="forminputdata.php" class="btn">Tambah</a>
                     </div>
 
-
                     <table>
                         
                         <thead>
                             <tr>
-                                <td>Name</td>
-                                <td>Alamat</td>
-                                <td>Status</td>
+                                <td>Nama</td>
+                                <td>Jenis Kelamin</td>
+                                <td>No Polisi</td>
+                                <td>No SIM</td>
+                                <td>Denda</td>
                                 <td>Aksi</td>
                             </tr>
                         </thead>
-
+        
                         <tbody>
+                            <?php
+                            $sql = mysqli_query($conn, "SELECT * FROM formulir WHERE 1");
+                            while ($data = mysqli_fetch_assoc($sql)) {
+                        ?>
                             <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dell Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Addidas Shoes</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dell Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Addidas Shoes</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
+                                
+                                <td><?= $data["nama"] ?></td>
+                                <td><?= $data["jeniskelamin"] ?></td>
+                                <td><?= $data["nopol"] ?></td>
+                                <td><?= $data["nosim"] ?></td>
+                                <td><?= $data["denda"] ?></td>
+                                <td>
+                                    <button><a href="" class="btn">Update</a></button>
+                                    <button><a href="" class="btn">Delete</a></button>
+                                </td>
+                            <?php
+                            }
+                            ?>
+                            
                         </tbody>
                     </table>
                 </div>
