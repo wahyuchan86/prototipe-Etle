@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2023 at 06:15 AM
+-- Generation Time: Jun 25, 2023 at 11:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -64,6 +64,7 @@ CREATE TABLE `formulir` (
   `pekerjaan` varchar(50) NOT NULL,
   `nosim` varchar(50) NOT NULL,
   `nohp` varchar(50) NOT NULL,
+  `denda` varchar(10) NOT NULL,
   `bukti` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -71,9 +72,10 @@ CREATE TABLE `formulir` (
 -- Dumping data for table `formulir`
 --
 
-INSERT INTO `formulir` (`id`, `kode`, `nama`, `jeniskelamin`, `nopol`, `jeniskendaraan`, `alamat`, `pekerjaan`, `nosim`, `nohp`, `bukti`) VALUES
-(9, '', 'CHANDRA WAHYU KUSUMA', 'Laki - Laki', 'B0019', 'Sepeda Motor', 'jkjk', 'klklk', 'n00012', '090921', ''),
-(10, '', 'CHANDRA WAHYU KUSUMA', 'Laki - Laki', 'AA1244', 'Bus', 'kjaks', 'klklk', 'm02291', '090921', '');
+INSERT INTO `formulir` (`id`, `kode`, `nama`, `jeniskelamin`, `nopol`, `jeniskendaraan`, `alamat`, `pekerjaan`, `nosim`, `nohp`, `denda`, `bukti`) VALUES
+(10, '', 'CHANDRA WAHYU KUSUMA', 'Laki - Laki', 'AA1244', 'Bus', 'kjaks', 'klklk', 'm02291', '090921', '', ''),
+(11, '', 'Gunawan Adi', 'Perempuan', 'AD1003', 'Sepeda Motor', 'jkjk', 'klklk', 'n00012', '090921', '50000', ''),
+(12, '', 'CHANDRA WAHYU KUSUMA', 'Laki - Laki', 'B0019', 'Bus', 'jkjk', 'klklk', 'n00012', '090921', '50000', '');
 
 --
 -- Indexes for dumped tables
@@ -105,7 +107,7 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `formulir`
 --
 ALTER TABLE `formulir`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
