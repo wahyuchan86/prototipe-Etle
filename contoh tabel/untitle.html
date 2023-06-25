@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kode Acak Otomatis</title>
+</head>
+<body>
+
+    <h1>Kode Acak Otomatis</h1>
+
+    <input type="text" id="code-input">
+
+    <script type="text/javascript">
+        const CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const CODE_LENGTH = 10;
+        
+        function generateCode() {
+            let codeInput = document.getElementById("code-input");
+            
+            // Mengacak kode baru setiap kali halaman direfresh
+            let newCode = "";
+            for(let i=0; i<CODE_LENGTH; i++) {
+                let randomIndex = Math.floor(Math.random() * CHARACTERS.length);
+                newCode += CHARACTERS.charAt(randomIndex);
+            }
+                
+            // Menampilkan kode baru ke dalam input text
+            codeInput.value = newCode;
+       }
+
+       // Memanggil fungsi generateCode saat halaman dimuat pertama kali atau ketika di-refresh.
+       window.onload = generateCode;
+
+       // Memberikan peringatan kepada pengguna jika ingin merefresh halaman dan menghapus data yang sudah diisi pada kolom teks.
+       window.addEventListener('beforeunload', function(e) {
+           e.preventDefault();
+           e.returnValue='';
+           return 'Apakah kamu yakin ingin merefresh halaman? Data yang sudah diisi akan hilang.';
+      });
+   </script>    
+</body>
+</html>
