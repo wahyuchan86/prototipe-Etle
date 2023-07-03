@@ -123,7 +123,11 @@ $kode = generateRandomString();
                     </div>
                     
                     <form action="../aksiinput.php" method="POST" enctype="multipart/form-data" name="input-data">
-                      <p align="right">No Formulir : <strong><?php echo generateRandomString(); ?></strong>
+                      <?php
+                        $kode = generateRandomString();
+                      ?>
+                      <p align="right">No Formulir : <strong><?php echo $kode ?></strong>
+                      <input type="hidden" name="kode" value="<?php echo $kode ?>">
                       </p>
                       <div class="main-user-info">
                         <div class="user-input-box">
